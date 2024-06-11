@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: white;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text {
+  font-size: 48px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.image-stack {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.image-stack img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-10deg) translate(10px, -10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-stack img:nth-child(1) {
+  z-index: 3;
+  transform: rotate(-10deg) translate(10px, -10px);
+}
+
+.image-stack img:nth-child(2) {
+  z-index: 2;
+  transform: rotate(-5deg) translate(5px, -5px);
+}
+
+.image-stack img:nth-child(3) {
+  z-index: 1;
+  transform: rotate(0deg) translate(0px, 0px);
+}
+
+.image-stack img:hover {
+  transform: scale(1.1) rotate(0deg) translate(0px, 0px);
+  z-index: 4;
+}
+
+.image-stack::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="text">Our Ad</div>
+  <div class="image-stack">
+    <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg">
+    <img src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" alt="Woman in a black leather jacket">
+    <img src="https://d3phaj0sisr2ct.cloudfront.net/site/images/tools/thumbnails/reviewed/upscale+image.png" alt="Woman in a black leather jacket">
+  </div>
+  <div class="text">vantages</div>
+</div>
+</body>
+</html>
